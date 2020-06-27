@@ -1,0 +1,32 @@
+image: docker:latest
+services:
+  - docker:dind
+  - selenium/standalone-chrome:latest
+
+stages:
+  - build
+  - test
+
+before_script:
+  #- dpkg --add-architecture i386
+  #- apt-get update
+  #- apt install libvips-dev
+  #- apt-get install -y libgtk2.0-0:i386 libsm6:i386
+  #- apt-get install -y libnss3
+  #- wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm yum install ./google-chrome-stable_current_*.rpm
+  - export DISPLAY=:1
+  - sleep 3
+
+maven-build:
+  image: maven:3.6.3-jdk-11
+  stage: build
+  tags:
+    - m5.large
+  script:
+    - echo "executing script on branch ${branchName}"
+    - "mvn clean -DbranchNameURL=${branchName} -Dtest=TMS_RegressionScenarios test -DreTry=2 -Dbrowser -Denv -DgridUrl=http://selenium__standalone-chrome:4444/wd/hub"
+  artifacts:
+    when: always
+    paths:
+      - /builds/tbb-qa/tms_test_automation_framework/screenshots/
+      - /builds/tbb-qa/tms_test_automation_framework/reports/
