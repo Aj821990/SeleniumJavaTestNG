@@ -1,4 +1,4 @@
-package com.hellofresh.pageObjects;
+package Frontend.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,6 +9,7 @@ import com.hellofresh.utilities.GlobalUtil;
 
 public class RegisterPage {
 
+/*
 	WebDriver ldriver;
 	GlobalUtil globalutil = GlobalUtil.getInstance();
 
@@ -16,6 +17,7 @@ public class RegisterPage {
 		ldriver = rdriver;
 		PageFactory.initElements(rdriver, this);
 	}
+*/
 
 	@FindBy(xpath = "//a[@class='login']")
 	WebElement userSignIn;

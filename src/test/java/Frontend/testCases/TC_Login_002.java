@@ -1,4 +1,4 @@
-package com.hellofresh.testCases;
+package Frontend.testCases;
 
 import java.io.IOException;
 import java.util.Map;

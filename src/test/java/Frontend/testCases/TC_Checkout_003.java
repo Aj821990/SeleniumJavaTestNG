@@ -1,4 +1,4 @@
-package com.hellofresh.testCases;
+package Frontend.testCases;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;

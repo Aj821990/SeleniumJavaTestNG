@@ -8,9 +8,11 @@
     <parameter name="env" value=""/>
     <parameter name="____" value="____"/>
 
+<!--
     <listeners>
         <listener class-name="framework.listener.Listener" />
     </listeners>
+-->
 
     <test name="SmokeTest">
         <groups>
@@ -19,9 +21,9 @@
             </define>
         </groups>
         <classes>
-            <class name="com.hellofresh.testCases.TC_Register_001" />
-            <class name="com.hellofresh.testCases.TC_Login_002" />
-            <class name="com.hellofresh.testCases.TC_Checkout_003" />
+            <class name="Frontend.testCases.TC_Register_001"> </class>
+            <class name="Frontend.testCases.TC_Login_002"> </class>
+            <class name="Frontend.testCases.TC_Checkout_003"> </class>
         </classes>
     </test>
 </suite>

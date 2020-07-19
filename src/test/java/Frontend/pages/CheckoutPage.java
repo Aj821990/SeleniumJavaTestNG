@@ -1,14 +1,13 @@
-package com.hellofresh.pageObjects;
+package Frontend.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.hellofresh.utilities.GlobalUtil;
-
 public class CheckoutPage {
 
+/*
 	WebDriver ldriver;
 	GlobalUtil globalutil = GlobalUtil.getInstance();
 
@@ -16,6 +15,7 @@ public class CheckoutPage {
 		ldriver = rdriver;
 		PageFactory.initElements(rdriver, this);
 	}
+*/
 
 	@FindBy(xpath = "//a[@class='sf-with-ul'][contains(text(),'Women')]")
 	WebElement womenHeader;
