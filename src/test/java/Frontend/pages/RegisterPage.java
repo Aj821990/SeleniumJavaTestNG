@@ -1,23 +1,10 @@
 package Frontend.pages;
 
-import org.openqa.selenium.WebDriver;
+import framework.base.BasePageMethods;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-import com.hellofresh.utilities.GlobalUtil;
-
-public class RegisterPage {
-
-/*
-	WebDriver ldriver;
-	GlobalUtil globalutil = GlobalUtil.getInstance();
-
-	public RegisterPage(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
-	}
-*/
+public class RegisterPage extends BasePageMethods {
 
 	@FindBy(xpath = "//a[@class='login']")
 	WebElement userSignIn;
@@ -78,11 +65,13 @@ public class RegisterPage {
 	@FindBy(xpath = "//input[@id='phone_mobile']")
 	WebElement txtMobbilePhone;
 
-	public void clickSignIn() {
+	public void clickSignIn()
+	{
 		userSignIn.click();
 	}
 
-	public String setEmail(String uEmail) {
+	public String setEmail(String uEmail)
+	{
 		// uEmail = "abc35@gmail.com";
 		// globalutil.explicitWait(txtEmail, 60);
 		// ldriver.findElement(txtEmail).sendKeys(uEmail);
@@ -90,85 +79,91 @@ public class RegisterPage {
 		return uEmail;
 	}
 
-	public String enteredEmail() {
+	public String enteredEmail()
+	{
 		return enteredEmail.getText();
 	}
 
-	public void clickCreateAccount() {
+	public void clickCreateAccount()
+	{
 		btnCreateAccount.click();
 	}
 
-	public void clickRegister() {
+	public void clickRegister()
+	{
 		btnRegister.click();
 	}
 
-	public void clickTitle(String title) {
-
-		if (title.equalsIgnoreCase(title)) {
+	public void clickTitle(String title)
+	{
+		if (title.equalsIgnoreCase(title))
+		{
 			titleMr.click();
-		} else if (title.equalsIgnoreCase(title)) {
+		} else if (title.equalsIgnoreCase(title))
+		{
 			titleMrs.click();
 		}
 	}
 
-	public String setFName(String uFName) {
-
+	public String setFName(String uFName)
+	{
 		txtFirstName.sendKeys(uFName);
 		return uFName;
 	}
 
-	public String setLName(String uLName) {
-
+	public String setLName(String uLName)
+	{
 		txtLastName.sendKeys(uLName);
 		return uLName;
 	}
 
-	public void setPassword(String uPwd) {
-
+	public void setPassword(String uPwd)
+	{
 		txtPassword.sendKeys(uPwd);
 	}
 
-	public void setDobDay(String uDobDay) {
-
-		globalutil.selectByValue(txtDobDay, uDobDay);
-
+	public void setDobDay(String uDobDay)
+	{
+		selectByValue(txtDobDay, uDobDay);
 	}
 
-	public void setDobMonth(String uDobMonth) {
-		globalutil.selectByValue(txtDobMonth, uDobMonth);
+	public void setDobMonth(String uDobMonth)
+	{
+		selectByValue(txtDobMonth, uDobMonth);
 	}
 
-	public void setDobYear(String uDobYear) {
-		globalutil.selectByValue(txtDobYear, uDobYear);
+	public void setDobYear(String uDobYear)
+	{
+		selectByValue(txtDobYear, uDobYear);
 	}
 
-	public void setAddress(String uAddress) {
-
+	public void setAddress(String uAddress)
+	{
 		txtAddress.sendKeys(uAddress);
 	}
 
-	public void setCity(String uCity) {
-
+	public void setCity(String uCity)
+	{
 		txtCity.sendKeys(uCity);
 	}
 
-	public void setState(String uState) {
-
-		globalutil.selectByVisibleText(txtState, uState);
+	public void setState(String uState)
+	{
+		selectByVisibleText(txtState, uState);
 	}
 
-	public void setPostCode(String uPostCode) {
+	public void setPostCode(String uPostCode)
+	{
 		txtPostCode.sendKeys(uPostCode);
 	}
 
-	public void setCountry(String uCountry) {
-
-		globalutil.selectByVisibleText(txtCountry, uCountry);
+	public void setCountry(String uCountry)
+	{
+		selectByVisibleText(txtCountry, uCountry);
 	}
 
-	public void setMobPhone(String uMobPhone) {
-
+	public void setMobPhone(String uMobPhone)
+	{
 		txtMobbilePhone.sendKeys(uMobPhone);
 	}
-
 }

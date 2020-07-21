@@ -3,22 +3,17 @@ package framework.base;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 
 import java.time.Duration;
-import java.util.Collections;
 import java.util.List;
 
 import static framework.Utilities.Constants.WAIT_MEDIUM;
 import static framework.base.TestBase.getDriver;
 import static java.util.Collections.emptyList;
 import static org.aspectj.bridge.MessageUtil.info;
-import static org.openqa.selenium.support.ui.ExpectedConditions.attributeContains;
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElementsLocatedBy;
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 import static org.testng.FileAssert.fail;
 
 public class BasePageMethods {
@@ -26,6 +21,7 @@ public class BasePageMethods {
     protected WebDriver driver = getDriver();
     private WebDriverWait webDriverWait = new WebDriverWait(driver, 60);
     private JavascriptExecutor jsExec = (JavascriptExecutor) driver;
+    //XLUtils xlread = new XLUtils();
     public Logger log = Logger.getLogger("rootLogger");
 
     // Element click method
@@ -61,7 +57,7 @@ public class BasePageMethods {
                     .pollingEvery(Duration.ofMillis(100))
                     .ignoring(StaleElementReferenceException.class)
                     .ignoring(NoSuchElementException.class);
-            element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+            element = wait.until(presenceOfElementLocated(locator));
         } catch (Throwable t) {
             Assert.fail("waitUntilPresenceOfElementByLocator fail", t);
         }

@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import framework.base.BasePageMethods;
 import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -13,8 +14,7 @@ import com.hellofresh.pageObjects.RegisterPage;
 import com.hellofresh.utilities.GlobalUtil;
 import com.hellofresh.utilities.XLUtils;
 
-public class TC_Register_001 extends BaseClass {
-	XLUtils xlread = new XLUtils();
+public class TC_Register_001 extends BasePageMethods {
 
 	@Test(dataProvider = "RegisterData")
 	public void registerCustomer(Map<Object, Object> regData) throws ParseException, IOException {

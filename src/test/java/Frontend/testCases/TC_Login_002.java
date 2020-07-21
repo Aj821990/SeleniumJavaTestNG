@@ -3,16 +3,13 @@ package Frontend.testCases;
 import java.io.IOException;
 import java.util.Map;
 
+import Frontend.pages.LoginPage;
+import framework.base.BasePageMethods;
 import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.hellofresh.pageObjects.LoginPage;
-import com.hellofresh.utilities.GlobalUtil;
-import com.hellofresh.utilities.XLUtils;
-
-public class TC_Login_002 extends BaseClass {
-	XLUtils xlread = new XLUtils();
+public class TC_Login_002 extends BasePageMethods {
 
 	@Test(dataProvider = "LoginData")
 	public void login(Map<Object, Object> loginData) throws IOException {

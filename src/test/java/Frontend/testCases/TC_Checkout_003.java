@@ -1,16 +1,15 @@
 package Frontend.testCases;
 
+import Frontend.pages.CheckoutPage;
+import framework.base.BasePageMethods;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-import com.hellofresh.pageObjects.CheckoutPage;
-import com.hellofresh.utilities.GlobalUtil;
-
-public class TC_Checkout_003 extends TC_Login_002 {
+public class TC_Checkout_003 extends BasePageMethods {
 
 	@Test(dependsOnMethods = { "login" })
 	public void checkoutProduct() {
-		CheckoutPage cp = new CheckoutPage(globalUtil.getDriver());
+		CheckoutPage cp = new CheckoutPage(getDriver());
 
 		globalUtil.implicitWait(20);
 
@@ -59,5 +58,4 @@ public class TC_Checkout_003 extends TC_Login_002 {
 		softAssert.assertTrue(globalUtil.getDriver().getCurrentUrl().contains("controller=order-confirmation"));
 
 	}
-
 }
